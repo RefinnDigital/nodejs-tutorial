@@ -1,24 +1,8 @@
 'use strict'
 
-const path = require('path');
-const express = require('express');
-const app = express();
+const { app } = require('./app');
+const { App } = require('./config');
 
-app.use('/assets', express.static(path.resolve(__dirname, './assets')));
-
-app.set('view engine', 'ejs');
-
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'My Todo Application - Changed'
-    });
+app.listen(App.PORT, () => {
+    console.log(`listening on port ${App.PORT}`);
 });
-
-app.get('/login', (reg, res) => {
-    res.send('this is our login page');
-})
-
-app.listen(3000, () => {
-    console.log('listening on port 3000');
-});
-
