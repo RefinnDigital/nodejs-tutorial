@@ -13,7 +13,7 @@ const Config = Object.freeze({
         NAME: process.env.APP_NAME
     },
     mongo: {
-        URI: process.env.mongo_URI
+        URI: process.env.MONGO_URI
     },
 
 });
